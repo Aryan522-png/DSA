@@ -12,7 +12,7 @@ vector<int>nextsmallerelement(vector<int>& heights,int n){
         while(!st.empty() && heights[st.top()] >= heights[i]){
             st.pop();
         }
-        ans[i]=st.empty() ? n : st.top();
+        ans[i]= st.empty() ? n : st.top(); ;
         st.push(i);
     }
     return ans;
@@ -28,7 +28,7 @@ vector<int>prevsmallerelement(vector<int>& heights,int n){
         while(!st.empty() &&  heights[st.top()] >= heights[i]){
             st.pop();
         }
-        ans[i]= st.empty() ? -1 : st.top();
+        ans[i]= ans[i] = st.empty() ? -1 : st.top();
         st.push(i);
     }
     return ans;
@@ -49,6 +49,10 @@ public:
 
        for(int i=0;i<n;i++){
 
+        if(next[i]==-1){
+            next[i]=n;
+        }
+        
 
 
         int l=heights[i];
